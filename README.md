@@ -35,7 +35,7 @@ Try removing the GIT_SSH environment variable with unset GIT_SSH. This was the c
 
 http://unix.stackexchange.com/questions/12195/how-to-avoid-being-asked-passphrase-each-time-i-push-to-bitbucket ::
 ssh-add
-eval $(ssh-add)
+eval $(ssh-agent)
 ssh-add (do this again)
 
 STEPS:

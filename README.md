@@ -33,6 +33,11 @@ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 http://stackoverflow.com/questions/13509293/git-fatal-could-not-read-from-remote-repository ::
 Try removing the GIT_SSH environment variable with unset GIT_SSH. This was the cause of my problem.
 
+http://unix.stackexchange.com/questions/12195/how-to-avoid-being-asked-passphrase-each-time-i-push-to-bitbucket ::
+$ exec ssh-agent bash
+$ ssh-add
+Enter passphrase for ~/.ssh/id_rsa: 
+
 STEPS:
 1. cd into folder
 2. mkdir [folder name]

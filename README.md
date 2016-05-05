@@ -27,6 +27,12 @@ This prints a nice "Press any key to continue . . . " message
 Or, if you don't want the "Press any key to continue . . ." message, do this instead:
 pause >nul
 
+https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/ ::
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+
+http://stackoverflow.com/questions/13509293/git-fatal-could-not-read-from-remote-repository ::
+Try removing the GIT_SSH environment variable with unset GIT_SSH. This was the cause of my problem.
+
 STEPS:
 1. cd into folder
 2. mkdir [folder name]

@@ -38,6 +38,53 @@ ssh-add
 eval $(ssh-agent)
 ssh-add (do this again)
 
+http://stackoverflow.com/questions/11081735/how-to-use-if-else-structure-in-a-batch-file
+IF %F%==1 IF %C%==1(
+    ::copying the file c to d
+    copy "%sourceFile%" "%destinationFile%"
+    )
+
+http://stackoverflow.com/questions/1788473/while-loop-in-batch
+:loop
+if %askFolder% GTR 0 goto loop
+
+http://stackoverflow.com/questions/18499797/less-than-or-equal-to
+
+http://stackoverflow.com/questions/12021033/how-do-i-request-and-receive-user-input-in-a-bat-and-use-it-to-run-a-certain-pr
+:Ask
+echo Would you like to use developer mode?(Y/N)
+set INPUT=
+set /P INPUT=Type input: %=%
+If /I "%INPUT%"=="y" goto yes
+If /I "%INPUT%"=="n" goto no
+echo Incorrect input & goto Ask
+:yes
+
+http://stackoverflow.com/questions/25384358/batch-if-elseif-else
+@echo off
+title Test
+
+echo Select a language. (de/en)
+set /p language=
+
+IF /i "%language%"=="de" goto languageDE
+IF /i "%language%"=="en" goto languageen
+
+echo Not found.
+goto commonexit
+
+:languageDE
+echo German
+goto commonexit
+
+:languageEN
+echo English
+goto commonexit
+
+:commonexit
+pause
+
+
 STEPS:
 1. cd into folder
 2. mkdir [folder name]

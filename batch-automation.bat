@@ -10,7 +10,7 @@ echo %readmeText% > README.md
 git init
 git add .
 set /p commitMsg="Enter commit message: "
-git commit -m %readmeText%
+git commit -m "%commitMsg%"
 git status
 set /p repo="Enter repo name: "
 git remote add origin git@github.com:wengtek/%repo%.git

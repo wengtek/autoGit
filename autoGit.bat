@@ -23,39 +23,43 @@ goto Ask
   goto commonexit
 
 :no
-  :: 1. Sets folder variable ::
+  :: Sets folder variable ::
   set /p folder="Enter folder name: "
 
-  :: 2. Creates folder in hard drive ::
+  :: Creates folder in hard drive ::
   mkdir %folder%
 
-  :: 3. Change directory to newly created folder ::
+  :: Change directory to newly created folder ::
   CD %folder%
 
   goto commonexit
 
 :commonexit
-:: 4. Sets text for readme file ::
+:: Sets text for readme file ::
 set /p readmeText="Enter readme text: "
 
-:: 5. Writes text into readme file ::
+:: Writes text into readme file ::
 echo %readmeText% > README.md
 
-:: 6. Git initialize & add readme ::
+echo node_modules > .gitignore
+
+type [your directory]\MIT-license.txt >> LICENSE.md
+
+:: Git initialize & add readme ::
 git init
 git add .
 
-:: 7. Sets commit message ::
+:: Sets commit message ::
 set /p commitMsg="Enter commit message: "
 
-:: 8. Writes commit message ::
+:: Writes commit message ::
 git commit -m "%commitMsg%"
 
-:: 9. Display status and add remote repository ::
+:: Display status and add remote repository ::
 git status
 git remote add origin git@github.com:%githubId%/%repo%.git
 
-:: 10. Push out to gitHub ::
+:: Push out to gitHub ::
 git push -u origin master
 
 :: Prevents command prompt from closing ::
